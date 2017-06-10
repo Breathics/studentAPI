@@ -1,5 +1,5 @@
 // Load route modules
-const shiba       = require('./shiba');
+const shiba       = require('./fridge');
 
 // We'll be using express.Router to handle
 // our multiple API endpoints
@@ -9,7 +9,7 @@ const router      = express.Router();
 // Similar to app.use() in Express, however
 // the purpose will be used to consume 
 // modules exported from our API endpoints
-router.use('/shiba', shiba);
+router.use('/fridge', fridge);
 
 
 
