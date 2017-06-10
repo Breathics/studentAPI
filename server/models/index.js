@@ -3,9 +3,17 @@ const path = require("path");
 const Sequelize = require("sequelize");
 let env = process.env.NODE_ENV || "development";
 let config = require(path.join(__dirname, '..', 'config', 'config.json'))[env];
-const sequelize = new Sequelize(config.database, config.username, config.password, config);
+let sequelize = new Sequelize(config.database, config.username, config.password, config);
 let db = {};
- 
+debugger
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
  
 fs
     .readdirSync(__dirname)
@@ -22,8 +30,13 @@ Object.keys(db).forEach(function(modelName) {
         db[modelName].associate(db);
     }
 });
- 
- 
+debugger
+db.ingredients.sequelize.sync({force: true}).then(() => {
+  console.log("Database looks good!");
+}).catch((err) => {
+  console.log("Nope try again");
+})
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
  
