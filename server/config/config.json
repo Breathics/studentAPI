@@ -1,0 +1,25 @@
+// Main purpose will be used establishing connections
+// with Sequelize with our respective database
+{
+    "development": {
+        "username": "root",
+        "password": null,
+        "database": "sequelize_passport",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "test": {
+        "username": "",
+        "password": null,
+        "database": "",
+        "host": "",
+        "dialect": "mysql"
+    },
+    "production": {
+        "username": "",
+        "password": null,
+        "database": "",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    }
+}
