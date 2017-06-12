@@ -3,9 +3,15 @@ const path = require("path");
 const Sequelize = require("sequelize");
 let env = process.env.NODE_ENV || "development";
 let config = require(path.join(__dirname, '..', 'config', 'config.json'))[env];
-let sequelize = new Sequelize(config.database, config.username, config.password, config);
+let sequelize = new Sequelize('groceryList', 'root', 'root', {
+    host: 'localhost',
+    port: 8000,
+    dialect: 'mysql'
+});
 let db = {};
+
 debugger
+console.log(sequelize);
 sequelize
   .authenticate()
   .then(() => {
@@ -30,12 +36,12 @@ Object.keys(db).forEach(function(modelName) {
         db[modelName].associate(db);
     }
 });
-debugger
-db.ingredients.sequelize.sync({force: true}).then(() => {
-  console.log("Database looks good!");
-}).catch((err) => {
-  console.log("Nope try again");
-})
+// debugger
+// db.ingredients.sequelize.sync({force: true}).then(() => {
+//   console.log("Database looks good!");
+// }).catch((err) => {
+//   console.log("Nope try again");
+// })
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
