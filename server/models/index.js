@@ -3,11 +3,7 @@ const path = require("path");
 const Sequelize = require("sequelize");
 let env = process.env.NODE_ENV || "development";
 let config = require(path.join(__dirname, '..', 'config', 'config.json'))[env];
-let sequelize = new Sequelize('groceryList', 'root', 'root', {
-    host: 'localhost',
-    port: 8000,
-    dialect: 'mysql'
-});
+let sequelize = new Sequelize(config.database, config.username, config.password, config);
 let db = {};
 
 debugger
