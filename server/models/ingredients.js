@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATEONLY,
       allowNull: false
     },
-
-
+  },
+  {
     timestamps: true,
     paranoid: true,
-    createdAt: false,
+    createdAt: true,
     deleteAt: 'destroyTime'
   });
   return Ingredient

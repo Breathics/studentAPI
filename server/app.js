@@ -11,15 +11,14 @@ const PORT    = 3000;
 // used in the main express application
 const routes  = require('./routes');
 const models  = require('./models');
-const Ingredient =  models.ingredients;
 
 // Syncing models to generate tables in
 // MySQL database if not already defined
-Ingredient.sequelize.sync({force: true}).then(() => {
-  console.log("Database looks good!");
-}).catch((err) => {
-  console.log("Nope try again");
-})
+models.sequelize.sync().then(() => {
+    console.log('Nice! Database looks fine')
+}).catch(function(err) {
+    console.log(err, "Something went wrong with the Database Update!")
+});
 
 // Consuming our express.Router middleware
 // that will handle our API endpoints
