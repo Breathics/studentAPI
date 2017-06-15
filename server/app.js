@@ -12,7 +12,6 @@ const PORT    = 3000;
 const routes  = require('./routes');
 const models  = require('./models');
 const Ingredient =  models.ingredients;
-debugger
 
 // Syncing models to generate tables in
 // MySQL database if not already defined
