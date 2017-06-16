@@ -9,16 +9,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    expires: {
-      type: DataTypes.DATEONLY,
+    daysTilExpiration: {
+      type: DataTypes.INTEGER,
       allowNull: false
-    },
-  },
-  {
-    timestamps: true,
-    paranoid: true,
-    createdAt: true,
-    deleteAt: 'destroyTime'
+    }
   });
   return Ingredient
 };

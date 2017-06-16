@@ -1,6 +1,8 @@
 // Importing our dependencies and any additional 
 // modules used in our express webserver
 const express     = require('express');
+const bodyParser  = require('body-parser');
+const morgan      = require('morgan');
 
 // Starting off our Express application
 const app     = express();
@@ -20,11 +22,15 @@ models.sequelize.sync().then(() => {
     console.log(err, "Something went wrong with the Database Update!")
 });
 
+//Consuming middleware
+app.use(morgan('dev'));
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+
 // Consuming our express.Router middleware
 // that will handle our API endpoints
 app.use('/api', routes);
-
-
 
 
 // Listens for a successful connection that 
