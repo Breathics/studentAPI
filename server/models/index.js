@@ -1,6 +1,8 @@
-const fs = require("fs");
-const path = require("path");
-const Sequelize = require("sequelize");
+// Loading in our modules
+const fs = require("fs"); // filesystem module
+const path = require("path"); // path module
+const Sequelize = require("sequelize"); // sequelize module to establish our connection
+
 let env = process.env.NODE_ENV || "development";
 let config = require(path.join(__dirname, '..', 'config', 'config.json'))[env];
 let sequelize = new Sequelize(config.database, config.username, config.password, config);
@@ -22,7 +24,15 @@ Object.keys(db).forEach(function(modelName) {
     }
 });
 
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
+db.sequelize = sequelize; // Creates our sequelize connection to MySQL DB
+db.Sequelize = Sequelize; // Creates a property of our loaded Sequelize Module
+
+// Syncing models to generate tables in
+// MySQL database if not already defined
+db.sequelize.sync().then(() => {
+    console.log('Nice! Database looks fine')
+}).catch(function(err) {
+    console.log(err, "Something went wrong with the Database Update!")
+});
  
 module.exports = db;

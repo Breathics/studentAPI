@@ -26,7 +26,7 @@ router.post('/vegetables', (req,res) => {
         createdAt: new Date(),
         updatedAt: new Date()
     }).then(data => {
-        res.status(200).json({"Success": true, "data":data})
+        res.status(200).send({"Success": true, "data":data})
     }).catch(err => {
         res.status(404).json({"Success": false, "Message": "Error 404!"})
     })

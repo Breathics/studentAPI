@@ -9,18 +9,10 @@ const app     = express();
 const env     = require('dotenv').load();
 const PORT    = 3000;
 
-// Loading in our models and routes to be
-// used in the main express application
+// Loading in routes to be used
+// in the main express application
 const routes  = require('./routes');
-const models  = require('./models');
 
-// Syncing models to generate tables in
-// MySQL database if not already defined
-models.sequelize.sync().then(() => {
-    console.log('Nice! Database looks fine')
-}).catch(function(err) {
-    console.log(err, "Something went wrong with the Database Update!")
-});
 
 //Consuming middleware
 app.use(morgan('dev'));
