@@ -5,6 +5,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       len: [2, 30]
     },
+    foodType: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      len: [2,30]
+    },
     quantity: {
       type: DataTypes.INTEGER,
       allowNull: false

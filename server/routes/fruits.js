@@ -8,21 +8,21 @@ let Ingredients = models.ingredients;
 router.get('/', (req,res) => {
     Ingredients.findAll({
         where: {
-            foodType: "protein"
+            type: "fruit"
         }
     })
       .then(data => {
-          res.status(200).json({"Success": true, "protein": data});
-          res.send(200).send("We have the protein");
+          res.status(200).json({"Success": true, "fruits": data});
+          res.send(200).send("We have the fruits");
       }).catch(err => {
-          res.status(404).send("We couldn't find any of your proteins");
+          res.status(404).send("We couldn't find any of your fruits");
       })
 });
 
 router.post('/', (req,res) => {
     Ingredients.create({
         ingredient: req.body.ingredient,
-        foodType: "protein",
+        foodType: "fruit",
         quantity: req.body.quantity,
         daysTilExpiration: req.body.daysTilExpiration,
         createdAt: new Date(),

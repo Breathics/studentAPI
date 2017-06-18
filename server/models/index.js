@@ -1,13 +1,14 @@
 // Loading in our modules
-const fs = require("fs"); // filesystem module
-const path = require("path"); // path module
-const Sequelize = require("sequelize"); // sequelize module to establish our connection
+let fs        = require("fs"); // filesystem module
+let path      = require("path"); // path module
+let Sequelize = require("sequelize"); // sequelize module to establish our connection
 
-let env = process.env.NODE_ENV || "development";
-let config = require(path.join(__dirname, '..', 'config', 'config.json'))[env];
+let env       = process.env.NODE_ENV || "development";
+let config    = require(path.join(__dirname, '..', 'config', 'config.json'))[env];
 let sequelize = new Sequelize(config.database, config.username, config.password, config);
 let db = {};
- 
+
+
 fs
     .readdirSync(__dirname)
     .filter(function(file) {
