@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 // Consuming our express.Router middleware
 // that will handle our API endpoints
-app.use('/api', routes);
+app.use('/sgt', routes);
 
 
 // Listens for a successful connection that 

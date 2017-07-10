@@ -1,7 +1,7 @@
 {
-  "name": "node_api",
+  "name": "studentAPI",
   "version": "1.0.0",
-  "description": "Boilerplate code to get started using Express/Sequelize/MySQL",
+  "description": "RESTful API for students using Express/Sequelize/MySQL",
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=development nodemon ./app.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Breathics/node_api.git"
+    "url": "git+https://github.com/Breathics/studentAPI.git"
   },
   "keywords": [
     "Express",
@@ -20,9 +20,9 @@
   "author": "Andy Ong",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Breathics/node_api/issues"
+    "url": "https://github.com/Breathics/studentAPI/issues"
   },
-  "homepage": "https://github.com/Breathics/node_api#readme",
+  "homepage": "https://github.com/Breathics/studentAPI#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
     "dotenv": "^4.0.0",
