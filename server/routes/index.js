@@ -1,6 +1,8 @@
 // Load route modules
 let students    = require('../models/students');
-
+let instructors = require('../models/instructors');
+let grade       = require('../models/grades');
+let course      = require('../models/courses');
 
 // We'll be using express.Router to handle
 // our multiple API endpoints
@@ -12,6 +14,9 @@ let router      = express.Router();
 // the purpose will be used to consume 
 // modules exported from our API endpoints
 router.use('/students', students);
+router.use('/instructors', instructors)
+router.use('/grades', grades);
+router.use('/courses', courses);
 
 // Export router object containing all API
 // modules to be consumed by express application
