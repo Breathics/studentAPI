@@ -27,7 +27,7 @@ Object.keys(db).forEach(function(modelName) {
 
 db.sequelize = sequelize; // Creates our sequelize connection to MySQL DB
 db.Sequelize = Sequelize; // Creates a property of our loaded Sequelize Module
-
+debugger
 // Syncing models to generate tables in
 // MySQL database if not already defined
 db.sequelize.sync().then(() => {

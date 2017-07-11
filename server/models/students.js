@@ -3,7 +3,6 @@ module.exports = (sequelize, DataTypes) => {
     ID: {
       type: DataTypes.BIGINT.UNSIGNED,
       unique: true,
-      autoIncrement: true,
       timestamps: true,
       createdAt: 'created',
       updateAt: 'modified'

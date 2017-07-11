@@ -3,7 +3,6 @@ module.exports = (sequelize, DataTypes) => {
     ID: {
       type: DataTypes.BIGINT.UNSIGNED,
       unique: true,
-      autoIncrement: true,
       timestamps: true,
       createdAt: 'created',
       updateAt: 'modified'
@@ -15,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BIGINT.UNSIGNED
     },
     grade: {
-      type: DataTypes.TINYINT.UNSIGNED
+      type: DataTypes.INTEGER(3).UNSIGNED
     },
     name: {
       type: DataTypes.STRING,

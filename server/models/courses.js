@@ -2,8 +2,7 @@ module.exports = (sequelize, DataTypes) => {
   let Course = sequelize.define("courses", {
     ID: {
       type: DataTypes.BIGINT.UNSIGNED,
-      unique: true,
-      autoIncrement: true
+      unique: true
     },
     name: {
       type: DataTypes.STRING,

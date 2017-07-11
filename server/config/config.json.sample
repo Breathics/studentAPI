@@ -1,0 +1,19 @@
+{
+    "development":
+    {
+        "username": "THING HERE",
+        "password": "THING HERE",
+        "database": "THING HERE",
+        "host": "THING HERE",
+        "dialect": "THING HERE"
+    },
+
+    "production":
+    {
+        "username": "THING HERE",
+        "password": "THING HERE",
+        "database": "THING HERE",
+        "host": "THING HERE",
+        "dialect": "THING HERE"
+    }
+}
