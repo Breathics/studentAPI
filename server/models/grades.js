@@ -1,16 +1,19 @@
 module.exports = (sequelize, DataTypes) => {
-  let Student = sequelize.define("students", {
-    ID: {
-      type: DataTypes.BIGINT.UNSIGNED,
-      unique: true,
-      timestamps: true,
-      createdAt: 'created',
-      updateAt: 'modified'
+  let Grade = sequelize.define("grades", {
+    student_id: {
+      type: DataTypes.BIGINT.UNSIGNED
     },
-    name: {
-      type: DataTypes.STRING,
-      len: [1,100]
+    course_id: {
+      type: DataTypes.BIGINT.UNSIGNED
+    },
+    grade: {
+      type: DataTypes.INTEGER(3).UNSIGNED
     }
+  },
+  {
+    timestamps: true,
+    createdAt: 'created',
+    updateAt: 'modified'
   });
-  return Student;
+  return Grade;
 };

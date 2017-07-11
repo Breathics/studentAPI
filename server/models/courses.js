@@ -1,9 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
   let Course = sequelize.define("courses", {
-    ID: {
-      type: DataTypes.BIGINT.UNSIGNED,
-      unique: true
-    },
     name: {
       type: DataTypes.STRING,
       len: [1,100]
@@ -11,6 +7,9 @@ module.exports = (sequelize, DataTypes) => {
     instructor_id: {
       type: DataTypes.BIGINT.UNSIGNED
     }
+  },
+  {
+    timestamps: false
   });
   return Course;
 };

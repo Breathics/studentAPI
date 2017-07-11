@@ -1,8 +1,8 @@
 // Load route modules
-let students    = require('../models/students');
-let instructors = require('../models/instructors');
-let grades      = require('../models/grades');
-let courses     = require('../models/courses');
+let students    = require('./students');
+let instructors = require('./instructors');
+let grades      = require('./grades');
+let courses     = require('./courses');
 
 // We'll be using express.Router to handle
 // our multiple API endpoints
