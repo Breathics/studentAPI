@@ -3,6 +3,7 @@
 const express     = require('express');
 const bodyParser  = require('body-parser');
 const morgan      = require('morgan');
+const cors        = require('cors');
 
 // Starting off our Express application
 const app     = express();
@@ -18,6 +19,7 @@ const routes  = require('./routes');
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(cors({origin: 'localhost:3000'}));
 
 
 // Consuming our express.Router middleware

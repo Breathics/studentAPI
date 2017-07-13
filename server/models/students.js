@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  let StudentGrade = sequelize.define("studentGrades", {
+  let Student = sequelize.define("students", {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -20,5 +20,5 @@ module.exports = (sequelize, DataTypes) => {
     createdAt: 'created',
     updateAt: 'modified'
   });
-  return StudentGrade;
+  return Student;
 };

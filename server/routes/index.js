@@ -1,5 +1,5 @@
 // Load route modules
-let studentGrades  = require('./studentGrades');
+let students  = require('./students');
 
 // Future route modules to be imported
 // let students    = require('./students');
@@ -16,7 +16,7 @@ let router      = express.Router();
 // Similar to app.use() in Express, however
 // the purpose will be used to consume 
 // modules exported from our API endpoints
-router.use('/studentGrades', studentGrades);
+router.use('/students', students);
 
 // Future router middlerware to be used
 // router.use('/students', students);
