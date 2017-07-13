@@ -30,7 +30,7 @@ db.Sequelize = Sequelize; // Creates a property of our loaded Sequelize Module
 
 // Syncing models to generate tables in
 // MySQL database if not already defined
-db.sequelize.sync({force: true}).then(() => {
+db.sequelize.sync().then(() => {
     console.log('Nice! Database looks fine')
 }).catch(function(err) {
     console.log(err, "Something went wrong with the Database Update!")
