@@ -19,7 +19,7 @@ const routes  = require('./routes');
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-app.use(cors({origin: 'localhost:3000'}));
+app.use(cors());
 
 
 // Consuming our express.Router middleware
