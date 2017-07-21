@@ -17,9 +17,13 @@ const routes  = require('./routes');
 
 //Consuming middleware
 app.use(morgan('dev'));
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(cors({origin: 'http://localhost'}));
+app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
+<<<<<<< HEAD
 app.use(cors());
+=======
+>>>>>>> 2e8257c5ebf747dded23154d4a6642086932c207
 
 
 // Consuming our express.Router middleware
